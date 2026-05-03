@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-surface: #ffffff;
+  --color-surface-dim: #f9f9f8;
+  --color-surface-bright: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f5f5f4;
+  --color-surface-container: #ebeae6;
+  --color-surface-container-high: #e5e5e2;
+  --color-surface-container-highest: #d9d9d6;
+  --color-on-surface: #111111;
+  --color-on-surface-variant: #444444;
+  --color-inverse-surface: #111111;
+  --color-inverse-on-surface: #f9f9f8;
+  --color-outline: #e5e5e2;
+  --color-outline-variant: #dcdcdc;
+  --color-surface-tint: #d97757;
+  --color-primary: #d97757;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #d97757;
+  --color-on-primary-container: #ffffff;
+  --color-secondary: #6b6b6b;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #ebeae6;
+  --color-on-secondary-container: #444444;
+  --color-background: #ffffff;
+  --color-on-background: #111111;
+  --color-sidebar-width: 280px;
+  --color-chat-max-width: 800px;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-background font-sans antialiased selection:bg-primary/20;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.markdown-body {
+  word-break: break-word;
+}
+
+.markdown-body h1 { @apply text-3xl font-black mb-6 mt-8 text-[#111] tracking-tight leading-tight; }
+.markdown-body h2 { @apply text-2xl font-bold mb-4 mt-8 text-[#111] tracking-tight leading-tight; }
+.markdown-body h3 { @apply text-xl font-bold mb-3 mt-6 text-[#111] tracking-tight; }
+.markdown-body p { @apply mb-6 leading-[1.8] text-[#333] font-normal text-[17px]; }
+.markdown-body ul { @apply list-disc pl-6 mb-6 space-y-3; }
+.markdown-body ol { @apply list-decimal pl-6 mb-6 space-y-3; }
+.markdown-body li { @apply mb-1 text-[17px] leading-[1.7] text-[#333]; }
+.markdown-body strong { @apply font-bold text-black; }
+.markdown-body code { @apply px-1.5 py-0.5 bg-surface-container-low rounded text-[14px] font-mono border border-outline-variant/30 text-[#d97757]; }
+.markdown-body pre { @apply p-6 bg-[#f9f9f8] rounded-2xl border border-outline-variant overflow-x-auto mb-8 shadow-sm; }
+.markdown-body pre code { @apply p-0 bg-transparent rounded-none border-none text-[#111]; }
+.markdown-body blockquote { @apply pl-6 border-l-4 border-[#d97757]/30 italic text-[#666] mb-8 bg-[#d97757]/3 py-4 rounded-r-2xl text-lg; }
